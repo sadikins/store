@@ -276,7 +276,7 @@
                         <div class="flex flex-col gap-y-4">
                             <div v-if="products_limit_stock.length > 0">
                                 <div v-for="product in products_limit_stock" :key="product.id" class="flex justify-between gap-x-4 items-center">
-                                    <img :src="product.image" :alt="product.name" class="w-16 border-2 border-accent-red/20 rounded-full mb-3"/> 
+                                    <img  :src="product.image" :alt="product.name" class="w-16 h-16 border-2 border-accent-red/20 rounded-full mb-3"/> 
 
                                     <div class="flex flex-col w-56">
                                         <div class="text-sm font-medium text-white">{{ product.title }} </div>
