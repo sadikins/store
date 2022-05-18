@@ -16,6 +16,8 @@ class CustomerTableSeeder extends Seeder
      */
     public function run()
     {
+
+       
         $faker = Faker::create();
 
         for($i = 0; $i > 10; $i++) {
@@ -23,7 +25,7 @@ class CustomerTableSeeder extends Seeder
             $customer = new Customer;
 
             $customer->name   = $faker->name();
-            $customer->no_tlp = '081' . $faker->randomNumber(8);;
+            $customer->no_telp = '081' . $faker->randomNumber(8);;
             $customer->address = $faker->address;
             $customer->save();
         }
