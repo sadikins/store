@@ -15,7 +15,7 @@ Route::prefix('apps')->group(function() {
     Route::group(['middleware' => ['auth']], function () {
 
         //route dashboard
-        Route::get('dashboard', App\Http\Controllers\Apps\DashboardController::class)->name('apps.dashboard');
+        Route::get('dashboard', App\Http\Controllers\Apps\DashboardController::class)->name('apps.dashboard')->middleware('permission:dashboard.index');
         
         //route permissions
         Route::get('/permissions', \App\Http\Controllers\Apps\PermissionController::class)->name('apps.permissions.index')

@@ -136,7 +136,7 @@
             <!-- Stats -->
             <div class="flex gap-6 mb-5">
 
-            <!-- Stats 1 -->
+            <!-- Stats Sales today -->
                 <div v-if="hasAnyPermission(['dashboard.sales_today'])" class="flex flex-col p-4 w-1/3 bg-gray-900 rounded-lg gap-y-3">
                     <div class="flex items-center gap-x-3">
                         <div class="p-2 bg-gray-800 rounded-lg">
@@ -165,9 +165,9 @@
                         Sales Today
                     </div>
                 </div>
-            <!-- End of Stats 1 -->
+            <!-- End of Stats Sales today -->
 
-             <!-- Stats 2 -->
+             <!-- Stats Profit today -->
                 <div v-if="hasAnyPermission(['dashboard.profits_today'])" class="flex flex-col p-4 w-1/3 bg-gray-900 rounded-lg gap-y-3">
                     <div class="flex items-center gap-x-3">
                         <div class="p-2 bg-gray-800 rounded-lg">
@@ -197,8 +197,8 @@
                     </div>
                 </div>
 
-                <!-- Stats 3 -->
-                 <div class="flex flex-col p-4 w-1/3 bg-gray-900 rounded-lg gap-y-3">
+                <!-- Stats Total Customers -->
+                 <div v-if="hasAnyPermission(['dashboard.profits_today'])" class="flex flex-col p-4 w-1/3 bg-gray-900 rounded-lg gap-y-3">
                     <div class="flex items-center gap-x-3">
                         <div class="p-2 bg-gray-800 rounded-lg">
                             <CustomerIcon/>
@@ -237,7 +237,7 @@
                         Total Customer
                     </div>
                 </div>
-                <!-- End of stats3 -->
+                <!-- End of stats Total Customer -->
             </div>
             <!-- End of Stats  -->
 
