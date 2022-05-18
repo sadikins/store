@@ -83,7 +83,7 @@ const menus = [
         icon: LogoutIcon,
         link: "/logout",
         method: "post",
-        permission: "dashboard.index",
+        permission: "transactions.index",
     },
 ];
 </script>
