@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        //create user
+        //create Admin
         $user = User::create([
             'name'      => 'Administrator',
             'email'     => 'admin@gmail.com',
@@ -25,16 +25,37 @@ class UserTableSeeder extends Seeder
         ]);
 
         //get all permissions
-        $permissions = Permission::all();
+        $admin_permissions = Permission::all();
 
         //get role admin
-        $role = Role::find(1);
+        $admin_role = Role::find(1);
 
         //assign permission to role
-        $role->syncPermissions($permissions);
+        $admin_role->syncPermissions($admin_permissions);
 
         //assign role to user
-        $user->assignRole($role);
+        $user->assignRole($admin_role);
+
+
+        // create Cashier
+        $user = User::create([
+            'name'      => 'Chasier',
+            'email'     => 'cashier@gmail.com',
+            'password'  => bcrypt('password'),
+        ]);
+
+
+        //get all permissions
+        $cashier_permissions = Permission::where('name', 'transactions.index')->get();
+
+        //get role cashier
+        $role_cashier = Role::find(2);
+
+        //assign permission to role
+        $role_cashier->syncPermissions($cashier_permissions);
+
+        //assign role to user
+        $user->assignRole($role_cashier);
     }
         
     
