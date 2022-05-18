@@ -11,8 +11,8 @@ import {
     KeyIcon,
     UserIcon,
     ShieldCheckIcon,
-    ClipboardCheckIcon,
-    TrendingUpIcon,
+    ChartBarIcon,
+    PresentationChartLineIcon,
     LogoutIcon,
     }
 from '@heroicons/vue/outline'
@@ -107,13 +107,13 @@ const logout = () => {
 
                                 <DropdownLink :href="route('apps.sales.index')" v-if="hasAnyPermission(['sales.index'])">
                                     <div class="flex">
-                                    <ClipboardCheckIcon class=" w-4 mr-2" />   Sales
+                                    <ChartBarIcon class=" w-4 mr-2" />   Sales
 
                                     </div>
                                 </DropdownLink>
                                 <DropdownLink :href="route('apps.profits.index')" v-if="hasAnyPermission(['profits.index'])">
                                     <div class="flex">
-                                    <TrendingUpIcon class=" w-4 mr-2" />   Profits
+                                    <PresentationChartLineIcon class=" w-4 mr-2" />   Profits
 
                                     </div>
                                 </DropdownLink>

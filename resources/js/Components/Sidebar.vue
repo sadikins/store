@@ -4,12 +4,12 @@ import {
     ShoppingCartIcon, 
     ChartPieIcon, 
     ShoppingBagIcon, 
-    TagIcon,
-    UserCircleIcon,
+    FolderIcon,
     LogoutIcon,
     UserIcon,
-    CurrencyDollarIcon,
-    ClipboardCheckIcon
+    PresentationChartLineIcon,
+    UsersIcon,
+    ChartBarIcon,
     }
 from '@heroicons/vue/outline'
 
@@ -22,16 +22,16 @@ const activeMenu = ref("Dashboard");
 
 const menus = [
     {
-        name: "Dashboard",
-        icon: ChartPieIcon,
-        link: "/apps/dashboard",
+        name: "Transaction",
+        icon: ShoppingCartIcon,
+        link: "/apps/transactions",
         method: "get",
-        permission: "dashboard.index",
-        
+        permission: "transactions.index",
     },
+    
     {
         name: "Categories",
-        icon: TagIcon,
+        icon: FolderIcon,
         link: "/apps/categories",
         method: "get",
         permission: "categories.index",
@@ -45,28 +45,30 @@ const menus = [
     },
     {
         name: "Customers",
-        icon: UserCircleIcon,
+        icon: UsersIcon,
         link: "/apps/customers",
         method: "get",
         permission: "customers.index",
     },
     {
-        name: "Transaction",
-        icon: ShoppingCartIcon,
-        link: "/apps/transactions",
+        name: "Dashboard Reports",
+        icon: ChartPieIcon,
+        link: "/apps/dashboard",
         method: "get",
-        permission: "transactions.index",
+        permission: "dashboard.index",
+        
     },
+
     {
-        name: "Sales",
-        icon: ClipboardCheckIcon,
+        name: "Sales Report",
+        icon: ChartBarIcon,
         link: "/apps/reports/sales",
         method: "get",
         permission: "sales.index",
     },
     {
-        name: "Profits",
-        icon: CurrencyDollarIcon,
+        name: "Profits Report",
+        icon: PresentationChartLineIcon,
         link: "/apps/reports/profits",
         method: "get",
         permission: "profits.index",
@@ -83,7 +85,7 @@ const menus = [
         icon: LogoutIcon,
         link: "/logout",
         method: "post",
-        permission: "transactions.index",
+        permission: "dashboard.index",
     },
 ];
 </script>

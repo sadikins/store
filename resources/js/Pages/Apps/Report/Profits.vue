@@ -41,9 +41,9 @@
 </script>
 
 <template>
-<AppLayout title="Reports">
+<AppLayout title="Profits Report">
     <template #title>
-        Reports
+        Profits Report
     </template>
     <div class="container w-full mt-5">
 
