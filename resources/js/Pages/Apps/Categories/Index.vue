@@ -1,7 +1,7 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
 import Pagination from "@/Components/Pagination.vue";
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 import { Inertia } from "@inertiajs/inertia";
 import ButtonLink from "@/Components/NavLink.vue";
 import Swal from "sweetalert2";
@@ -19,6 +19,9 @@ const handleSearch = () => {
         q: search.value,
     });
 };
+
+
+
 
 // Destroy
 const destroy = (id) => {
@@ -57,8 +60,7 @@ const destroy = (id) => {
 
             <!-- Search bar -->
             <div class="flex flex-col md:flex-row  gap-3 md:gap-0 justify-between pb-4 mt-5">
-                <form
-                    @submit.prevent="handleSearch"
+                <form @submit="handleSearch"
                     class="flex justify-center bg-gray-700 rounded-lg px-5"
                 >
                     <!-- Icon search -->
